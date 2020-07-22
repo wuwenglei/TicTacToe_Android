@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Switch;
 import android.widget.TextView;
+
+import java.util.Random;
 
 /**
  * The main program of the
@@ -30,6 +33,10 @@ public class MainActivity extends AppCompatActivity {
     boolean XPlay;
     // Instance storing values of each cell.
     CellValue[] board;
+    // Computer on/off.
+    Switch computer;
+    // Instance of class Random.
+    Random random;
 
     // Main program.
     @Override
@@ -61,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
         gameOver=false;
         XPlay=true;
         board = new CellValue[9];
+        computer = (Switch) findViewById(R.id.computerSwitch);
+        random = new Random();
 
         // Initialze each cell to EMPTY.
         for(int i=0; i<board.length; i++){
@@ -88,6 +97,9 @@ public class MainActivity extends AppCompatActivity {
                     }
                     determineResult();
                 }
+                if(!gameOver && computer.isChecked()){
+                    computerPlay();
+                }
             }
         });
 
@@ -106,6 +118,9 @@ public class MainActivity extends AppCompatActivity {
                         XPlay=true;
                     }
                     determineResult();
+                }
+                if(!gameOver && computer.isChecked()){
+                    computerPlay();
                 }
             }
         });
@@ -126,6 +141,9 @@ public class MainActivity extends AppCompatActivity {
                     }
                     determineResult();
                 }
+                if(!gameOver && computer.isChecked()){
+                    computerPlay();
+                }
             }
         });
 
@@ -144,6 +162,9 @@ public class MainActivity extends AppCompatActivity {
                         XPlay=true;
                     }
                     determineResult();
+                }
+                if(!gameOver && computer.isChecked()){
+                    computerPlay();
                 }
             }
         });
@@ -164,6 +185,9 @@ public class MainActivity extends AppCompatActivity {
                     }
                     determineResult();
                 }
+                if(!gameOver && computer.isChecked()){
+                    computerPlay();
+                }
             }
         });
 
@@ -182,6 +206,9 @@ public class MainActivity extends AppCompatActivity {
                         XPlay=true;
                     }
                     determineResult();
+                }
+                if(!gameOver && computer.isChecked()){
+                    computerPlay();
                 }
             }
         });
@@ -202,6 +229,9 @@ public class MainActivity extends AppCompatActivity {
                     }
                     determineResult();
                 }
+                if(!gameOver && computer.isChecked()){
+                    computerPlay();
+                }
             }
         });
 
@@ -221,6 +251,9 @@ public class MainActivity extends AppCompatActivity {
                     }
                     determineResult();
                 }
+                if(!gameOver && computer.isChecked()){
+                    computerPlay();
+                }
             }
         });
 
@@ -239,6 +272,9 @@ public class MainActivity extends AppCompatActivity {
                         XPlay=true;
                     }
                     determineResult();
+                }
+                if(!gameOver && computer.isChecked()){
+                    computerPlay();
                 }
             }
         });
@@ -363,5 +399,40 @@ public class MainActivity extends AppCompatActivity {
             edttxt.setText("DRAW");
             return;
         }
+    }
+
+    // Computer play method.
+    private void computerPlay(){
+        int index;
+        while (true){
+            index = random.nextInt(9);
+            if(board[index]==CellValue.EMPTY){break;}
+        }
+        if(XPlay){
+            board[index]=CellValue.X;
+            if(index==0){button0.setText("X");}
+            else if(index==1){button1.setText("X");}
+            else if(index==2){button2.setText("X");}
+            else if(index==3){button3.setText("X");}
+            else if(index==4){button4.setText("X");}
+            else if(index==5){button5.setText("X");}
+            else if(index==6){button6.setText("X");}
+            else if(index==7){button7.setText("X");}
+            else if(index==8){button8.setText("X");}
+            XPlay=false;
+        } else {
+            board[index]=CellValue.O;
+            if(index==0){button0.setText("O");}
+            else if(index==1){button1.setText("O");}
+            else if(index==2){button2.setText("O");}
+            else if(index==3){button3.setText("O");}
+            else if(index==4){button4.setText("O");}
+            else if(index==5){button5.setText("O");}
+            else if(index==6){button6.setText("O");}
+            else if(index==7){button7.setText("O");}
+            else if(index==8){button8.setText("O");}
+            XPlay=true;
+        }
+        determineResult();
     }
 }
