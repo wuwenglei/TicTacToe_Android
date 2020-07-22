@@ -77,8 +77,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         // Show initialized statistics.
-        statisticsX.setText("X win "+XWin+" games.");
-        statisticsO.setText("O win "+OWin+" games.");
+        statisticsX.setText("X wins "+XWin+" games.");
+        statisticsO.setText("O wins "+OWin+" games.");
         statisticsDraw.setText(draw+" draws.");
 
         // Click to enter value into the first cell.
@@ -286,8 +286,8 @@ public class MainActivity extends AppCompatActivity {
                 XWin=0;
                 OWin=0;
                 draw=0;
-                statisticsX.setText("X win "+XWin+" games.");
-                statisticsO.setText("O win "+OWin+" games.");
+                statisticsX.setText("X wins "+XWin+" games.");
+                statisticsO.setText("O wins "+OWin+" games.");
                 statisticsDraw.setText(draw+" draws.");
             }
         });
@@ -322,13 +322,13 @@ public class MainActivity extends AppCompatActivity {
                 if(board[i]==CellValue.X){
                     XWin++;
                     gameOver=true;
-                    statisticsX.setText("X win "+XWin+" games.");
+                    statisticsX.setText("X wins "+XWin+" games.");
                     edttxt.setText("XWIN");
                     return;
                 } else if(board[i]==CellValue.O){
                     OWin++;
                     gameOver=true;
-                    statisticsO.setText("O win "+OWin+" games.");
+                    statisticsO.setText("O wins "+OWin+" games.");
                     edttxt.setText("OWIN");
                     return;
                 }
@@ -341,13 +341,13 @@ public class MainActivity extends AppCompatActivity {
                 if(board[i]==CellValue.X){
                     XWin++;
                     gameOver=true;
-                    statisticsX.setText("X win "+XWin+" games.");
+                    statisticsX.setText("X wins "+XWin+" games.");
                     edttxt.setText("XWIN");
                     return;
                 } else if(board[i]==CellValue.O){
                     OWin++;
                     gameOver=true;
-                    statisticsO.setText("O win "+OWin+" games.");
+                    statisticsO.setText("O wins "+OWin+" games.");
                     edttxt.setText("OWIN");
                     return;
                 }
@@ -359,13 +359,13 @@ public class MainActivity extends AppCompatActivity {
             if(board[0]==CellValue.X){
                 XWin++;
                 gameOver=true;
-                statisticsX.setText("X win "+XWin+" games.");
+                statisticsX.setText("X wins "+XWin+" games.");
                 edttxt.setText("XWIN");
                 return;
             } else if(board[0]==CellValue.O){
                 OWin++;
                 gameOver=true;
-                statisticsO.setText("O win "+OWin+" games.");
+                statisticsO.setText("O wins "+OWin+" games.");
                 edttxt.setText("OWIN");
                 return;
             }
@@ -373,13 +373,13 @@ public class MainActivity extends AppCompatActivity {
             if(board[2]==CellValue.X){
                 XWin++;
                 gameOver=true;
-                statisticsX.setText("X win "+XWin+" games.");
+                statisticsX.setText("X wins "+XWin+" games.");
                 edttxt.setText("XWIN");
                 return;
             } else if(board[2]==CellValue.O){
                 OWin++;
                 gameOver=true;
-                statisticsO.setText("O win "+OWin+" games.");
+                statisticsO.setText("O wins "+OWin+" games.");
                 edttxt.setText("OWIN");
                 return;
             }
@@ -403,6 +403,8 @@ public class MainActivity extends AppCompatActivity {
 
     // Computer play method.
     private void computerPlay(){
+
+        // Generate a random index.
         int index;
         while (true){
             index = random.nextInt(9);
