@@ -244,6 +244,7 @@ public class MainActivity extends AppCompatActivity {
                 button6.setText("");
                 button7.setText("");
                 button8.setText("");
+                edttxt.setText("PLAYING");
             }
         });
 
@@ -257,11 +258,13 @@ public class MainActivity extends AppCompatActivity {
                     XWin++;
                     gameOver=true;
                     statisticsX.setText("X win "+XWin+" games.");
+                    edttxt.setText("XWIN");
                     return;
                 } else if(board[i]==CellValue.O){
                     OWin++;
                     gameOver=true;
                     statisticsO.setText("O win "+OWin+" games.");
+                    edttxt.setText("OWIN");
                     return;
                 }
             }
@@ -272,11 +275,13 @@ public class MainActivity extends AppCompatActivity {
                     XWin++;
                     gameOver=true;
                     statisticsX.setText("X win "+XWin+" games.");
+                    edttxt.setText("XWIN");
                     return;
                 } else if(board[i]==CellValue.O){
                     OWin++;
                     gameOver=true;
                     statisticsO.setText("O win "+OWin+" games.");
+                    edttxt.setText("OWIN");
                     return;
                 }
             }
@@ -286,11 +291,13 @@ public class MainActivity extends AppCompatActivity {
                 XWin++;
                 gameOver=true;
                 statisticsX.setText("X win "+XWin+" games.");
+                edttxt.setText("XWIN");
                 return;
             } else if(board[0]==CellValue.O){
                 OWin++;
                 gameOver=true;
                 statisticsO.setText("O win "+OWin+" games.");
+                edttxt.setText("OWIN");
                 return;
             }
         } else if(board[2]==board[4] && board[4]==board[6]){
@@ -298,11 +305,13 @@ public class MainActivity extends AppCompatActivity {
                 XWin++;
                 gameOver=true;
                 statisticsX.setText("X win "+XWin+" games.");
+                edttxt.setText("XWIN");
                 return;
             } else if(board[2]==CellValue.O){
                 OWin++;
                 gameOver=true;
                 statisticsO.setText("O win "+OWin+" games.");
+                edttxt.setText("OWIN");
                 return;
             }
         }
@@ -316,6 +325,7 @@ public class MainActivity extends AppCompatActivity {
             draw++;
             gameOver=true;
             statisticsDraw.setText(draw+" draws.");
+            edttxt.setText("DRAW");
             return;
         }
     }
