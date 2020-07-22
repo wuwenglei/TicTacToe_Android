@@ -7,21 +7,39 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+/**
+ * The main program of the
+ * APP TicTacToe.
+ *
+ *
+ * @author Wenglei Wu
+ */
 
 public class MainActivity extends AppCompatActivity {
 
+    // Instance variables.
+    // Buttons.
     Button button0, button1, button2, button3, button4, button5, button6, button7, button8, buttonClear, buttonRestart;
+    // Text boxes.
     TextView edttxt, statisticsX, statisticsO, statisticsDraw;
+    // Number of wins and draws.
     int XWin, OWin, draw;
+    // Determine whether a game is over.
     boolean gameOver;
+    // Determine X to play or O to play.
     boolean XPlay;
+    // Instance storing values of each cell.
     CellValue[] board;
 
+    // Main program.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        // Initialize.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Initialize instance variables.
         button0 = (Button) findViewById(R.id.btn0);
         button1 = (Button) findViewById(R.id.btn1);
         button2 = (Button) findViewById(R.id.btn2);
@@ -42,18 +60,19 @@ public class MainActivity extends AppCompatActivity {
         draw=0;
         gameOver=false;
         XPlay=true;
-
         board = new CellValue[9];
+
+        // Initialze each cell to EMPTY.
         for(int i=0; i<board.length; i++){
             board[i]=CellValue.EMPTY;
         }
 
-
+        // Show initialized statistics.
         statisticsX.setText("X win "+XWin+" games.");
         statisticsO.setText("O win "+OWin+" games.");
         statisticsDraw.setText(draw+" draws.");
 
-
+        // Click to enter value into the first cell.
         button0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Click to enter value into the second cell.
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -90,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Click to enter value into the third cell.
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -108,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Click to enter value into the fourth cell.
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -126,6 +148,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Click to enter value into the fifth cell.
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -144,6 +167,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Click to enter value into the sixth cell.
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -162,6 +186,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Click to enter value into the seventh cell.
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -180,6 +205,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Click to enter value into the eighth cell.
         button7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -198,6 +224,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Click to enter value into the ninth cell.
         button8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -216,6 +243,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Click to clear statistics.
         buttonClear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -228,6 +256,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Click to restart the game.
         buttonRestart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -246,11 +275,12 @@ public class MainActivity extends AppCompatActivity {
                 edttxt.setText("PLAYING");
             }
         });
-
-
     }
 
+    // Help method to determine the game status after change to the value of a cell.
     private void determineResult(){
+
+        // Determine rows.
         for(int i=0; i<board.length; i+=3){
             if(board[i]==board[i+1] && board[i+1]==board[i+2]){
                 if(board[i]==CellValue.X){
@@ -268,6 +298,8 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
+
+        // Determine columns.
         for(int i=0; i<3; i++){
             if(board[i]==board[i+3] && board[i+3]==board[i+6]){
                 if(board[i]==CellValue.X){
@@ -285,6 +317,8 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
+
+        //Determine diagonals.
         if(board[0]==board[4] && board[4]==board[8]){
             if(board[0]==CellValue.X){
                 XWin++;
@@ -314,6 +348,8 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
         }
+
+        //Determine draw.
         int countNotEmpty=0;
         for (int i=0; i<board.length; i++){
             if(board[i]!=CellValue.EMPTY){

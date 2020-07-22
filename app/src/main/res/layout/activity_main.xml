@@ -180,7 +180,7 @@
         android:layout_marginStart="53dp"
         android:layout_marginLeft="53dp"
         android:layout_marginTop="556dp"
-        android:text="Click RESTART to restart a game."
+        android:text="Click RESTART to restart the game."
         android:textSize="18sp" />
 
     <TextView
