@@ -96,9 +96,9 @@ public class MainActivity extends AppCompatActivity {
                         XPlay=true;
                     }
                     determineResult();
-                }
-                if(!gameOver && computer.isChecked()){
-                    computerPlay();
+                    if(!gameOver && computer.isChecked()){
+                        computerPlay();
+                    }
                 }
             }
         });
@@ -118,9 +118,9 @@ public class MainActivity extends AppCompatActivity {
                         XPlay=true;
                     }
                     determineResult();
-                }
-                if(!gameOver && computer.isChecked()){
-                    computerPlay();
+                    if(!gameOver && computer.isChecked()){
+                        computerPlay();
+                    }
                 }
             }
         });
@@ -140,9 +140,9 @@ public class MainActivity extends AppCompatActivity {
                         XPlay=true;
                     }
                     determineResult();
-                }
-                if(!gameOver && computer.isChecked()){
-                    computerPlay();
+                    if(!gameOver && computer.isChecked()){
+                        computerPlay();
+                    }
                 }
             }
         });
@@ -162,9 +162,9 @@ public class MainActivity extends AppCompatActivity {
                         XPlay=true;
                     }
                     determineResult();
-                }
-                if(!gameOver && computer.isChecked()){
-                    computerPlay();
+                    if(!gameOver && computer.isChecked()){
+                        computerPlay();
+                    }
                 }
             }
         });
@@ -184,9 +184,9 @@ public class MainActivity extends AppCompatActivity {
                         XPlay=true;
                     }
                     determineResult();
-                }
-                if(!gameOver && computer.isChecked()){
-                    computerPlay();
+                    if(!gameOver && computer.isChecked()){
+                        computerPlay();
+                    }
                 }
             }
         });
@@ -206,9 +206,9 @@ public class MainActivity extends AppCompatActivity {
                         XPlay=true;
                     }
                     determineResult();
-                }
-                if(!gameOver && computer.isChecked()){
-                    computerPlay();
+                    if(!gameOver && computer.isChecked()){
+                        computerPlay();
+                    }
                 }
             }
         });
@@ -228,9 +228,9 @@ public class MainActivity extends AppCompatActivity {
                         XPlay=true;
                     }
                     determineResult();
-                }
-                if(!gameOver && computer.isChecked()){
-                    computerPlay();
+                    if(!gameOver && computer.isChecked()){
+                        computerPlay();
+                    }
                 }
             }
         });
@@ -250,9 +250,9 @@ public class MainActivity extends AppCompatActivity {
                         XPlay=true;
                     }
                     determineResult();
-                }
-                if(!gameOver && computer.isChecked()){
-                    computerPlay();
+                    if(!gameOver && computer.isChecked()){
+                        computerPlay();
+                    }
                 }
             }
         });
@@ -272,9 +272,9 @@ public class MainActivity extends AppCompatActivity {
                         XPlay=true;
                     }
                     determineResult();
-                }
-                if(!gameOver && computer.isChecked()){
-                    computerPlay();
+                    if(!gameOver && computer.isChecked()){
+                        computerPlay();
+                    }
                 }
             }
         });
